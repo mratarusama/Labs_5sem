@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.image {
+figure {
   box-sizing: border-box;
   padding-left: 1em;
   padding-bottom: 1em;
@@ -12,22 +12,22 @@
   text-align: center;
 }
 
-.image > img {
+figure > img {
   transition: 1s transform;
   width: 100%;
   max-height: 340px;
 }
 
-.image > img + figcaption {
+figure > img + figcaption {
   transition: 1s transform;
 }
 
-.image > img:hover {
+figure > img:hover {
   transform: scale(1.1);
   transition: 2s transform;
 }
 
-.image > img:hover + figcaption {
+figure > img:hover + figcaption {
   transform: translateY(15px);
   transition: 2s transform;
 }
