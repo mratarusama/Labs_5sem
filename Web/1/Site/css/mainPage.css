@@ -1,4 +1,4 @@
-content > img {
+#content> img {
   width: 200px;
   float: left;
   border-radius: 100%;
@@ -6,6 +6,6 @@ content > img {
   margin-right: 50px;
 }
 
-content > p {
+#content> p {
   padding-top: 1.5em;
 }

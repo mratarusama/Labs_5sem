@@ -21,7 +21,7 @@
     </nav>
   </header>
 
-  <content>
+  <div id="content">
     <form action="mailto:marinin.i@bk.ru" method="post" enctype="text/plain">
       Введите фамилию, имя и отчество:
       <input type="text" name="fio" pattern="([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})" required> <br><br>
@@ -75,7 +75,7 @@
       <h1>Вопрос 2</h1> <br>
       <p>Два ведра до краев наполнены водой. В одном из них плавает кусок дерева. Какое ведро перевесит?</p>
       <div id="ans2_ans">
-        <input id="ans2_first" type="radio" name="ans2" value="1">
+        <input id="ans2_first" type="radio" name="ans2" value="1" checked>
         <label for="ans2_first">Перевесит ведро с деревяшкой</label>
         <input id="ans2_second" type="radio" name="ans2" value="2">
         <label for="ans2_second">Перевесит ведро с водой</label>
@@ -96,6 +96,6 @@
         <input class="button" type="reset" value="Reset">
       </div>
     </form>
-  </content>
+  </div>
 </body>
 </html>

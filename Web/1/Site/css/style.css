@@ -17,15 +17,15 @@ header {
   border-radius: 0 0 25% 25%;
 }
 
-content {
+#content{
   position: inherit;
   display: block;
   width: 80%;
   padding-left: 10%;
-  padding-top: 10%;
+  padding-top: max(10%, 150px);
 }
 
-content p {
+#contentp {
   text-align: justify;
   text-indent: 1.5em;
   font-size: 1.5em;
@@ -53,7 +53,7 @@ a {
   color: Blue;
 }
 
-.menu{
+.menu {
   background-color: ;
   display: flex;
   width: 70%;
