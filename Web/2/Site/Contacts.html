@@ -24,7 +24,7 @@
   <div id="content">
     <form action="mailto:marinin.i@bk.ru" method="post" enctype="text/plain">
       Введите фамилию, имя и отчество: <br>
-      <input class="inputText" type="text" name="fio" pattern="([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})" required> <br><br>
+      <input class="inputText" type="text" name="fio"> <br><br>
 
 
       Ваш пол:
@@ -44,6 +44,9 @@
         <option value="21+">21+</option>
       </select> <br><br>
 
+      Введите ваш номер телефона: <br>
+      <input class="inputText" type="text" name="phone">
+      <br><br>
 
       Введите ваш почтовый адрес: <br>
       <input class="inputText" type="email" name="email" required> <br><br>
@@ -53,5 +56,6 @@
       </div>
     </form>
   </div>
+  <script type="text/javascript" src="./js/contacts.js"></script>
 </body>
 </html>
