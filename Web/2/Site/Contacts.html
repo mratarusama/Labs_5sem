@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/Contacts.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+</head>
+<body>
+  <header>
+    <span id="name">Игорь Маринин</span>
+    <nav class="menu">
+      <div class="menu_item"><a href="./index.html">Главная</a></div>
+      <div class="menu_item"><a href="./About.html">Обо мне</a></div>
+      <div class="menu_item"><a href="./Interests.html">Мои интересы</a></div>
+      <div class="menu_item"><a href="./Study.html">Учеба</a></div>
+      <div class="menu_item"><a href="./Photos.html">Фотоальбом</a></div>
+      <div class="menu_item selected_item"><a href="./Contacts.html">Контакты</a></div>
+      <div class="menu_item"><a href="./Test.html">Тест</a></div>
+    </nav>
+  </header>
+
+  <div id="content">
+    <form action="mailto:marinin.i@bk.ru" method="post" enctype="text/plain">
+      Введите фамилию, имя и отчество: <br>
+      <input class="inputText" type="text" name="fio" pattern="([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})" required> <br><br>
+
+
+      Ваш пол:
+      <input type="radio" id="radioMale" name="sex" value="1" checked>
+      <label for="radioMale">Мужской</label> /
+
+      <input type="radio" id="radioFemale" name="sex" value="0">
+      <label for="radioFemale">Женский</label><br><br>
+
+
+      Выберите ваш возраст:
+      <select name="age">
+        <option value="17-" selected>17-</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21+">21+</option>
+      </select> <br><br>
+
+
+      Введите ваш почтовый адрес: <br>
+      <input class="inputText" type="email" name="email" required> <br><br>
+      <div id="finalBtns">
+        <input class="button" type="submit" value="Send">
+        <input class="button" type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
