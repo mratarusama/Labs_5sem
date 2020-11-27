@@ -33,10 +33,10 @@ const titles = [
   'Картинка 15'
 ];
 
-build_photo = (url, alt, title, caption) => {
-  var fig = document.createElement('figure');
-  var img = document.createElement('img');
-  var cap = document.createElement('figcaption');
+let build_photo = (url, alt, title, caption) => {
+  let fig = document.createElement('figure');
+  let img = document.createElement('img');
+  let cap = document.createElement('figcaption');
 
   img.src = url;
   img.alt = alt;
@@ -48,20 +48,20 @@ build_photo = (url, alt, title, caption) => {
   fig.append(img);
   fig.append(cap);
   return fig;
-}
+};
 
-insert_photos = (photo, title, count_in_row) => {
-  var photo_count = photo.length;
-  var title_count = title.length;
+let insert_photos = (photo, title, count_in_row) => {
+  let photo_count = photo.length;
+  let title_count = title.length;
   if(photo_count !== title_count){
     throw 'Different number of objects in arrays';
   }
 
-  var content = document.createElement('div');
+  let content = document.createElement('div');
   content.id = 'content';
-  var row = '';
-  for(i = 0; i < photo_count; i++) {
-    if(i % count_in_row == 0){
+  let row = '';
+  for(let i = 0; i < photo_count; i++) {
+    if(i % count_in_row === 0){
       content.append(row);
       row = document.createElement('div');
       row.classList.add('row');
@@ -70,8 +70,8 @@ insert_photos = (photo, title, count_in_row) => {
   }
   content.append(row);
   document.body.append(content);
-}
+};
 
 window.onload = () => {
   insert_photos(fotos, titles, 6);
-}
+};

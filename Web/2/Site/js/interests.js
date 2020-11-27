@@ -41,11 +41,11 @@ const aboutme_data = [
   ]
 ];
 
-var build_item = (item_data) => {
-  block = document.createElement("div");
+let build_item = (item_data) => {
+  let block = document.createElement("div");
   block.classList.add('desc_item');
 
-  h1 = document.createElement("h1");
+  let h1 = document.createElement("h1");
   h1.id = item_data[0];
   h1.innerText = item_data[1];
 
@@ -53,23 +53,23 @@ var build_item = (item_data) => {
   block.append(document.createElement('br'));
 
   item_data[2].forEach((paragraph) => {
-    p = document.createElement('p');
+    let p = document.createElement('p');
     p.innerText = paragraph;
     block.append(p);
   });
 
   return block;
-}
+};
 
-var build_hyperlink_list = (interests) => {
-  fig = document.createElement('figure');
-  cap = document.createElement('figcaption');
+let build_hyperlink_list = (interests) => {
+  let fig = document.createElement('figure');
+  let cap = document.createElement('figcaption');
   cap.innerText = 'Быстрая навигация по странице:';
 
-  ul = document.createElement('ul');
+  let ul = document.createElement('ul');
   interests.forEach((interest) => {
-    li = document.createElement('li');
-    a = document.createElement('a');
+    let li = document.createElement('li');
+    let a = document.createElement('a');
     a.href = '#'.concat(interest[0]);
     a.innerText  =interest[1];
     li.append(a);
@@ -77,12 +77,12 @@ var build_hyperlink_list = (interests) => {
   });
 
   fig.append(cap);
-  fig.append(ul)
+  fig.append(ul);
   return fig;
-}
+};
 
-var write_all_interests = (interests) => {
-  content = document.createElement('div');
+let write_all_interests = (interests) => {
+  let content = document.createElement('div');
   content.id = 'content';
 
   content.append(build_hyperlink_list(interests));
@@ -95,8 +95,8 @@ var write_all_interests = (interests) => {
   });
 
   document.body.append(content);
-}
+};
 
 window.onload = () => {
   write_all_interests(aboutme_data);
-}
+};
