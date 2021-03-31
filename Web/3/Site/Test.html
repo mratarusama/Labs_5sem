@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/Test.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello</title>
+</head>
+<body>
+  <header>
+    <span id="name">Игорь Маринин</span>
+    <nav class="menu">
+      <div class="menu_item"><a href="./index.html">Главная</a></div>
+      <div class="menu_item"><a href="./About.html">Обо мне</a></div>
+      <div class="menu_item"><a href="./Interests.html">Мои интересы</a></div>
+      <div class="menu_item"><a href="./Study.html">Учеба</a></div>
+      <div class="menu_item"><a href="./Photos.html">Фотоальбом</a></div>
+      <div class="menu_item"><a href="./Contacts.html">Контакт</a></div>
+      <div class="menu_item selected_item"><a href="./Test.html">Тест</a></div>
+    </nav>
+  </header>
+
+  <div id="content">
+    <form action="mailto:marinin.i@bk.ru" method="post" enctype="text/plain">
+      Введите фамилию, имя и отчество:
+      <input type="text" name="fio"> <br><br>
+
+      Выберите вашу учебную группу:
+      <select name="group">
+        <optgroup label="1 курс">
+          <option value="ИС/б-20-1-о">ИС/б-20-1-о</option>
+          <option value="ИС/б-20-2-о">ИС/б-20-2-о</option>
+          <option value="ИС/б-20-3-о">ИС/б-20-3-о</option>
+          <option value="ПИ/б-20-1-о">ПИ/б-20-1-о</option>
+        </optgroup>
+        <optgroup label="2 курс">
+          <option value="ИС/б-19-1-о">ИС/б-19-1-о</option>
+          <option value="ИС/б-19-2-о">ИС/б-19-2-о</option>
+          <option value="ИС/б-19-3-о">ИС/б-19-3-о</option>
+          <option value="ПИ/б-19-1-о">ПИ/б-19-1-о</option>
+        </optgroup>
+        <optgroup label="3 курс">
+          <option value="ИС/б-18-1-о">ИС/б-18-1-о</option>
+          <option value="ИС/б-18-2-о">ИС/б-18-2-о</option>
+          <option value="ИС/б-18-3-о">ИС/б-18-3-о</option>
+          <option value="ПИ/б-18-1-о">ПИ/б-18-1-о</option>
+        </optgroup>
+        <optgroup label="4 курс">
+          <option value="ИС/б-17-1-о">ИС/б-17-1-о</option>
+          <option value="ИС/б-17-2-о">ИС/б-17-2-о</option>
+          <option value="ИС/б-17-3-о">ИС/б-17-3-о</option>
+          <option value="ПИ/б-17-1-о">ПИ/б-17-1-о</option>
+        </optgroup>
+        <optgroup label="5 курс">
+          <option value="ИС/м-16-1-о">ИС/м-16-1-о</option>
+          <option value="ИС/м-16-2-о">ИС/м-16-2-о</option>
+          <option value="ИС/м-16-3-о">ИС/м-16-3-о</option>
+          <option value="ПИ/м-16-1-о">ПИ/м-16-1-о</option>
+        </optgroup>
+        <optgroup label="6 курс">
+          <option value="ИС/м-15-1-о">ИС/м-15-1-о</option>
+          <option value="ИС/м-15-2-о">ИС/м-15-2-о</option>
+          <option value="ИС/м-15-3-о">ИС/м-15-3-о</option>
+          <option value="ПИ/м-15-1-о">ПИ/м-15-1-о</option>
+        </optgroup>
+      </select> <br><br>
+
+      <h3>Ответьте на следующие три вопроса:</h3> <br><br><br>
+
+      <h1>Вопрос 1</h1><br>
+      <p>Какое поле появляется вокруг любого предмета?</p>
+      <textarea name="ans1" cols="30" rows="10"></textarea> <br><br>
+
+      <h1>Вопрос 2</h1> <br>
+      <p>Два ведра до краев наполнены водой. В одном из них плавает кусок дерева. Какое ведро перевесит?</p>
+      <div id="ans2_ans">
+        <div id="ans2_radio">
+          <input id="ans2_first" type="radio" name="ans2" value="1" checked>
+          <label for="ans2_first">Перевесит ведро с деревяшкой</label>
+        </div>
+
+        <div id="ans2_radio">
+          <input id="ans2_second" type="radio" name="ans2" value="2">
+          <label for="ans2_second">Перевесит ведро с водой</label>
+        </div>
+
+        <div id="ans2_radio">
+          <input id="ans2_thrid" type="radio" name="ans2" value="3">
+          <label for="ans2_thrid">Никакое ведро не перевесит</label>
+        </div>
+
+      </div> <br><br>
+
+      <h1>Вопрос 3</h1> <br>
+      <p>На каком инструменте играл Альберт Эйнштейн с юных лет?</p>
+      <select name="ans3">
+        <option value="1">Гитара</option>
+        <option value="2">Пианино</option>
+        <option value="3">Скрипка</option>
+      </select>
+
+      <div id="finalBtns">
+        <input class="button" type="submit" value="Send">
+        <input class="button" type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src='./js/test.js'></script>
+</body>
+</html>
