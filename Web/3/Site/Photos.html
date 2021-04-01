@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/Photos.css">
+  <script src="./js/main.js" type="module" defer></script>
+  <script src="./js/history.js"></script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hello</title>
 </head>
@@ -15,11 +17,21 @@
       <div class="menu_item"><a href="./About.html">Обо мне</a></div>
       <div class="menu_item"><a href="./Interests.html">Мои интересы</a></div>
       <div class="menu_item"><a href="./Study.html">Учеба</a></div>
-      <div class="menu_item selected_item"><a href="./Photos.html">Фотоальбом</a></div>
+      <div class="menu_item"><a href="./Photos.html">Фотоальбом</a></div>
       <div class="menu_item"><a href="./Contacts.html">Контакт</a></div>
       <div class="menu_item"><a href="./Test.html">Тест</a></div>
+      <div class="menu_item selected_item"><a href="./History.html">История</a></div>
     </nav>
+    <p id="timer">19.02.1992</p>
   </header>
+
+  <div id="black-block">
+    <img src="" alt=""/>
+    <input id="back-button" type="button" value="Назад" style="left:38%;bottom:10%;" onclick="clickBack();"/>
+    <input id="next-button" type="button" value="Далее" style="left:58%;bottom:10%;" onclick="clickNext();"/>
+    <input id="hide-button" type="button" value="Готово" style="left:48%;bottom:10%;" onclick="whiteFunction();"/>
+  </div>
+
   <script type="text/javascript" src='./js/photos.js'></script>
 </body>
 </html>

@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/Contacts.css">
+  <link rel="stylesheet" href="./css/calendar.css">
+  <script src="./js/main.js" type="module" defer></script>
+  <script src="./js/calendar.js" defer></script>
+  <script src="./js/history.js"></script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hello</title>
 </head>
@@ -18,7 +22,9 @@
       <div class="menu_item"><a href="./Photos.html">Фотоальбом</a></div>
       <div class="menu_item selected_item"><a href="./Contacts.html">Контакт</a></div>
       <div class="menu_item"><a href="./Test.html">Тест</a></div>
+      <div class="menu_item"><a href="./History.html">История</a></div>
     </nav>
+    <p id="timer">19.02.1992</p>
   </header>
 
   <div id="content">
@@ -47,6 +53,30 @@
       Введите ваш номер телефона: <br>
       <input class="inputText" type="text" name="phone">
       <br><br>
+
+      <section>
+        <label id="input-date" for="input-date">Дата рождения: <div id="date-value"></div></label>
+        <div>
+          <div>
+            <select class="" name="" id="year-selection"></select>
+            <select class="" id="year-select"></select>
+            <table>
+              <tbody id="calendar-body">
+              <tr class="celendar-days">
+                <td class="celendar-words">Понедельник</td>
+                <td class="celendar-words">Вторник</td>
+                <td class="celendar-words">Среда</td>
+                <td class="celendar-words">Четверг</td>
+                <td class="celendar-words">Пятница</td>
+                <td class="celendar-words">Суббота</td>
+                <td class="celendar-words">Воскресенье</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       Введите ваш почтовый адрес: <br>
       <input class="inputText" type="email" name="email" required> <br><br>

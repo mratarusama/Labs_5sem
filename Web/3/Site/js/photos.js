@@ -1,3 +1,7 @@
+let black = document.getElementById("black-block");
+let img = document.createElement("IMG");
+let i = 0;
+
 const fotos = [
   './img/cat1.png',
   './img/cat2.png',
@@ -15,6 +19,7 @@ const fotos = [
   './img/cat14.png',
   './img/cat15.png'
 ];
+
 const titles = [
   'Картинка 1',
   'Картинка 2',
@@ -66,12 +71,48 @@ let insert_photos = (photo, title, count_in_row) => {
       row = document.createElement('div');
       row.classList.add('row');
     }
-    row.append(build_photo(photo[i], title[i], title[i], title[i]));
+    row.appendChild(build_photo(photo[i], title[i], title[i], title[i]));
   }
   content.append(row);
   document.body.append(content);
 };
 
-window.onload = () => {
-  insert_photos(fotos, titles, 6);
-};
+insert_photos(fotos, titles, 6);
+Array.from(document.getElementsByTagName('img')).forEach((e, i)=>{
+  e.setAttribute('onclick', `imgClick(${i})`)
+});
+
+function imgClick(index)
+{
+  console.log(index);
+  i = index;
+  black.style.display = "block";
+  img.src = fotos[index-1];
+  img.alt = titles[index-1];
+  img.title = titles[index-1];
+  black.appendChild(img);
+}
+
+function clickNext()
+{
+  if(i < 15)
+  {
+    i++
+    imgClick(i);
+  }
+}
+
+function clickBack()
+{
+  if(i > 1)
+  {
+    i--;
+    imgClick(i);
+  }
+}
+
+function whiteFunction()
+{
+  black.style.display = "none";
+  black.removeChild(img);
+}
