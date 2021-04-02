@@ -88,45 +88,39 @@ let buildUniqueHistory = (sessionHistory) => {
  */
 let printHistoryBlock = (session, historyBlock) => {
     let date = new Date(parseInt(session));
-    let div, p, ul, li, a;
+    let ul = $('<ul/>');
 
-    div = document.createElement('div');
-    p = document.createElement('p');
-
-    ul = document.createElement('ul');
-    p.innerText = date.toString();
-
-    div.append(p);
     let allItems = JSON.parse(localStorage.getItem(session))
     if(display) {
         allItems.forEach((page) => {
-            li = document.createElement('li');
-            a = document.createElement('a');
-
-            [a.innerText, a.href] = page;
-
-            li.append(a);
-
-            ul.append(li);
+            ul.append(
+                $('<li/>').append(
+                    $('<a/>')
+                        .val(page[0])
+                        .attr('href', page[1])
+                )
+            );
         });
     } else {
         let uniqueItems = buildUniqueHistory(allItems);
         uniqueItems.forEach((page) => {
-            li = document.createElement('li');
-            a = document.createElement('a');
-
-            a.innerText = page[0] + '(' + page[2] + ')';
-            a.href = page[1];
-
-            li.append(a);
-
-            ul.append(li);
+            ul.append(
+                $('<li/>').append(
+                    $('<a/>')
+                        .val(page[0] + '(' + page[2] + ')')
+                        .attr('href', page[1])
+                )
+            );
         })
     }
-    div.append(ul);
 
-    historyBlock.append(div);
-    historyBlock.append(document.createElement('br'));
+    historyBlock
+        .append(
+            $('<div/>').append(
+                $('<p/>')
+                    .val(date.toString())
+            ).append(ul))
+        .append($('<br/>'));
 };
 
 /*
@@ -136,28 +130,34 @@ let printHistoryBlock = (session, historyBlock) => {
 * Но суть функции, думаю, понятна
 */
 let printHistory = (currentSession) => {
-    let historyBlock = document.getElementById('history');
-    let historyCurrentBlock = document.getElementById('history_current');
-    let historyAllBlock = document.getElementById('history_all');
+    let historyBlock = $('#history');
+    let historyCurrentBlock = $('#history_current');
+    let historyAllBlock = $('#history_all');
 
-    if(!Object.is(historyBlock, null)){
+    if(historyBlock.length){
         let date = new Date();
-        let div, p, ul, li, a;
-
         // Выведем текущий сеанс
-        p = document.createElement('p');
-        p.innerText = 'Текущий сеанс:';
-        p.style.fontSize = '1.2em';
-        p.style.paddingBottom = '10px';
-        historyCurrentBlock.appendChild(p);
+
+
+        historyCurrentBlock.appendChild(
+            $('<p/>')
+                .val('Текущий сеанс:')
+                .css({
+                    'font-size': '1.2em',
+                    'padding-bottom': '10px'
+                })
+        );
         printHistoryBlock(currentSession, historyCurrentBlock);
 
         // Выведем всю историю посещений
-        p = document.createElement('p');
-        p.innerText = 'За всё время:';
-        p.style.fontSize = '1.2em';
-        p.style.paddingBottom = '10px';
-        historyAllBlock.appendChild(p);
+        historyAllBlock.appendChild.appendChild(
+            $('<p/>')
+                .val('За всё время:')
+                .css({
+                    'font-size': '1.2em',
+                    'padding-bottom': '10px'
+                })
+        );
         Object.keys(localStorage).forEach((session) => {
             printHistoryBlock(session, historyAllBlock);
         })
@@ -177,8 +177,8 @@ let clearStorage = () => {
 * Очищает блоки с историей посещений
  */
 let clearHistoryBlocks = () => {
-    document.getElementById('history_current').innerHTML = "";
-    document.getElementById('history_all').innerHTML = "";
+    $('#history_current').empty();
+    $('#history_all').empty();
 }
 
 /*
@@ -194,10 +194,10 @@ let changeMode = (currentSession) => {
 
 window.addEventListener('load', () => {
     let cookieVal = getCookie(sessionName);
-    let changeModeButton = document.getElementById('change_mode_button');
+    let changeModeButton = $('#change_mode_button');
 
-    if(!Object.is(changeModeButton, null)){
-        changeModeButton.addEventListener('click', () => { // Переключение режима отображения по кнопке
+    if(changeModeButton.length){
+        changeModeButton.bind('click', () => { // Переключение режима отображения по кнопке
             changeMode(cookieVal);
         });
     }

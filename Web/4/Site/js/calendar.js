@@ -1,4 +1,3 @@
-let month_en = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let month_ru = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 
 for (let i =1; i <= 12; i++) {

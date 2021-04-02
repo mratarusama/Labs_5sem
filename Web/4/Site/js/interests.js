@@ -42,59 +42,54 @@ const aboutme_data = [
 ];
 
 let build_item = (item_data) => {
-  let block = document.createElement("div");
-  block.classList.add('desc_item');
-
-  let h1 = document.createElement("h1");
-  h1.id = item_data[0];
-  h1.innerText = item_data[1];
-
-  block.append(h1);
-  block.append(document.createElement('br'));
+  console.log(item_data[1]);
+  let block = $("<div/>")
+      .addClass('desc_item')
+      .append(
+          $("<h1/>")
+              .attr('id', item_data[0])
+              .text(item_data[1]))
+      .append($('<br/>'))
 
   item_data[2].forEach((paragraph) => {
-    let p = document.createElement('p');
-    p.innerText = paragraph;
-    block.append(p);
+    block.append(
+        $('<p/>')
+            .text(paragraph)
+    );
   });
 
   return block;
 };
 
 let build_hyperlink_list = (interests) => {
-  let fig = document.createElement('figure');
-  let cap = document.createElement('figcaption');
-  cap.innerText = 'Быстрая навигация по странице:';
-
-  let ul = document.createElement('ul');
+  let ul = $('<ul/>');
   interests.forEach((interest) => {
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.href = '#'.concat(interest[0]);
-    a.innerText  =interest[1];
-    li.append(a);
-    ul.append(li);
+    ul.append(
+        $('<li/>').append(
+                $('<a/>')
+                    .attr('href', '#'.concat(interest[0]))
+                    .text(interest[1])
+            )
+    );
   });
-
-  fig.append(cap);
-  fig.append(ul);
-  return fig;
+  return $('<figure/>')
+      .append($('<figcaption/>').text('Быстрая навигация по странице'))
+      .append(ul);
 };
 
 let write_all_interests = (interests) => {
-  let content = document.createElement('div');
-  content.id = 'content';
-
-  content.append(build_hyperlink_list(interests));
-  content.append(document.createElement('br'));
-  content.append(document.createElement('br'));
+  let content = $('<div/>')
+      .attr('id', 'content')
+      .append(build_hyperlink_list(interests))
+      .append($('<br/>'))
+      .append($('<br/>'));
 
   interests.forEach((interest) => {
-    content.append(document.createElement('br'));
-    content.append(build_item(interest));
+    content.append('<br/>')
+        .append(build_item(interest));
   });
 
-  document.body.append(content);
+  $('body').append(content);
 };
 
 window.onload = () => {

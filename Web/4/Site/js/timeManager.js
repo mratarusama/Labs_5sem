@@ -1,5 +1,5 @@
 let timer = null;
-let timerText = document.getElementById('timer');
+let timerText = $('#timer');
 let weekDaysRU = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
 let zeroFormat = function(i) {
@@ -8,9 +8,9 @@ let zeroFormat = function(i) {
 
 let showTime = function() {
     let time = new Date();
-    timerText.innerText =  zeroFormat(time.getHours()) + ':' + zeroFormat(time.getMinutes()) + ':'
+    timerText.text(zeroFormat(time.getHours()) + ':' + zeroFormat(time.getMinutes()) + ':'
         + zeroFormat(time.getSeconds()) + ' | ' + zeroFormat(time.getDay()) + '-' + zeroFormat(time.getMonth())
-        + '-' + time.getFullYear() + ' ' + weekDaysRU[time.getDay()];
+        + '-' + time.getFullYear() + ' ' + weekDaysRU[time.getDay()]);
 }
 
 export let startTimeCounter = function(){

@@ -1,5 +1,5 @@
-let black = document.getElementById("black-block");
-let img = document.createElement("IMG");
+let black = $("#black-block");
+let img = $("<img/>");
 let i = 0;
 
 const fotos = [
@@ -38,23 +38,6 @@ const titles = [
   'Картинка 15'
 ];
 
-let build_photo = (url, alt, title, caption) => {
-  let fig = document.createElement('figure');
-  let img = document.createElement('img');
-  let cap = document.createElement('figcaption');
-
-  img.src = url;
-  img.alt = alt;
-  img.title = title;
-
-  cap.innerText = caption;
-  cap.classList.add('picDesc')
-
-  fig.append(img);
-  fig.append(cap);
-  return fig;
-};
-
 let insert_photos = (photo, title, count_in_row) => {
   let photo_count = photo.length;
   let title_count = title.length;
@@ -62,35 +45,46 @@ let insert_photos = (photo, title, count_in_row) => {
     throw 'Different number of objects in arrays';
   }
 
-  let content = document.createElement('div');
-  content.id = 'content';
+  let content = $('<div/>')
+      .attr('id', 'content');
   let row = '';
   for(let i = 0; i < photo_count; i++) {
     if(i % count_in_row === 0){
+      if(row.length)
       content.append(row);
-      row = document.createElement('div');
-      row.classList.add('row');
+      row = $('<div/>')
+          .addClass('row');
     }
-    row.appendChild(build_photo(photo[i], title[i], title[i], title[i]));
+    console.log(row);
+    row.append(
+        $('<figure/>')
+            .append($('<img/>', {src:photo[i], alt: title[i], title: title[i]}))
+            .append(
+                $('<figcaption/>')
+                    .text(title[i])
+                    .addClass('picDesc')
+            )
+    );
   }
   content.append(row);
-  document.body.append(content);
+  $('body').append(content);
 };
 
 insert_photos(fotos, titles, 6);
-Array.from(document.getElementsByTagName('img')).forEach((e, i)=>{
-  e.setAttribute('onclick', `imgClick(${i})`)
+$('img').each((i, e)=>{
+  $(e).attr('onclick', `imgClick(${i})`)
 });
 
 function imgClick(index)
 {
-  console.log(index);
   i = index;
-  black.style.display = "block";
-  img.src = fotos[index-1];
-  img.alt = titles[index-1];
-  img.title = titles[index-1];
-  black.appendChild(img);
+
+  black.show(1000).append(
+      img.show(1000)
+          .attr('src', fotos[index-1])
+          .attr('alt', titles[index-1])
+          .attr('title', titles[index-1])
+  );
 }
 
 function clickNext()
@@ -98,7 +92,8 @@ function clickNext()
   if(i < 15)
   {
     i++
-    imgClick(i);
+    img.hide(300);
+    setTimeout(() => imgClick(i), 300);
   }
 }
 
@@ -107,12 +102,13 @@ function clickBack()
   if(i > 1)
   {
     i--;
-    imgClick(i);
+    img.hide(300);
+    setTimeout(() => imgClick(i), 300);
   }
 }
 
 function whiteFunction()
 {
-  black.style.display = "none";
-  black.removeChild(img);
+  img.hide(1000);
+  black.hide(1000);
 }

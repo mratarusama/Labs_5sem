@@ -1,9 +1,10 @@
 window.addEventListener('load', () => {
-  let form = document.forms[0];
-  form.fio.required = true;
-  form.fio.pattern = '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})';
+  let form = $('form');
+  form.find('[name=fio]')
+      .attr('required','')
+      .attr('pattern', '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})');
 
-  for(let item of form.elements){
+  for(let item of form.serializeArray()){
     if(item.tagName === 'INPUT' && item.className !== 'button') {
       item.addEventListener('invalid', (invalid) => {
         invalid.target.focus();
@@ -15,9 +16,10 @@ window.addEventListener('load', () => {
     }
   }
 
-  form.phone.pattern = '^\\+((\\d{11})|(\\d{9}))';
-  form.phone.value = '+';
-  form.phone.addEventListener('keydown', (event) => {
+  form.find('[name=phone]')
+      .attr('pattern', '^\\+((\\d{11})|(\\d{9}))')
+      .val('+')
+      .bind('keydown', (event) => {
     let key = event.key;
     let input = event.target;
     if(!isNaN(parseInt(key))){
@@ -51,4 +53,34 @@ window.addEventListener('load', () => {
       }
     }
   });
+
+  $('<div>').attr('id', 'tooltip').appendTo($('body'));
+  $("[data-tooltip]").mousemove(function (eventObject) {
+    $("#tooltip").text($(this).attr("data-tooltip")).css({
+      'top' : eventObject.pageY + 5,
+      'left' : eventObject.pageX + 5
+    }).show();
+
+  }).mouseout(function () {
+    $("#tooltip").hide().text("").css({"top" : 0, "left" : 0});
+  });
+
+  $('input#abortSubmit').click(function(){
+    $('#modal').hide(1000);
+  });
+
+  $('input#confirmSubmit').click(function(){
+    form.submit();
+    $('#modal').hide(1000);
+  });
+
+  form[0].addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    if ($('[name=fio]')[0].validity.valid) {
+      if ($('[name=phone]')[0].validity.valid) {
+        $('#modal').show(1000);
+      }
+    }
+  })
 });
