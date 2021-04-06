@@ -29,7 +29,7 @@
   <div id="content">
     <form action="mailto:marinin.i@bk.ru" method="post" enctype="text/plain">
       Введите фамилию, имя и отчество:
-      <input type="text" name="fio"> <br><br>
+      <input type="text" name="fio" pattern="([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})" required> <br><br>
 
       Выберите вашу учебную группу:
       <select name="group">

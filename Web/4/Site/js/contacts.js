@@ -4,17 +4,20 @@ window.addEventListener('load', () => {
       .attr('required','')
       .attr('pattern', '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})');
 
+  let focusInvalid = (e) => {e.target.focus();};
+  let checkItem = (e) => { e.target.style.borderColor = e.target.validity.valid?'green':'red'; };
+
   for(let item of form.serializeArray()){
-    if(item.tagName === 'INPUT' && item.className !== 'button') {
-      item.addEventListener('invalid', (invalid) => {
-        invalid.target.focus();
-      });
-      item.addEventListener('focusout', (e) => {
-        e.target.style.borderColor = e.target.validity.valid ? 'green' : 'red';
-      })
+    $(item).bind('invalid', focusInvalid)
+        .bind('blur', checkItem)
+        .bind('keyup', checkItem);
+  }
+
+  form.bind('reset', (e) => {
+    for(let item of e.target.elements){
       item.style.borderColor = 'black';
     }
-  }
+  });
 
   form.find('[name=phone]')
       .attr('pattern', '^\\+((\\d{11})|(\\d{9}))')
