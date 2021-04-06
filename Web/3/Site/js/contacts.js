@@ -3,17 +3,31 @@ window.addEventListener('load', () => {
   form.fio.required = true;
   form.fio.pattern = '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})';
 
+  let focusInvalid = (e) => {e.target.focus();};
+  let checkItem = (e) => { e.target.style.borderColor = e.target.validity.valid?'green':'red'; };
+
   for(let item of form.elements){
-    if(item.tagName === 'INPUT' && item.className !== 'button') {
-      item.addEventListener('invalid', (invalid) => {
-        invalid.target.focus();
-      });
-      item.addEventListener('focusout', (e) => {
-        e.target.style.borderColor = e.target.validity.valid ? 'green' : 'red';
-      })
-      item.style.borderColor = 'black';
-    }
+    item.addEventListener('invalid', focusInvalid);
+
+    item.addEventListener('blur', checkItem);
+    item.addEventListener('keyup', checkItem);
   }
+
+  form.addEventListener('reset', (e) => {
+    select_date(1);
+    for(let item of e.target.elements){
+      item.style.borderColor = 'black';
+      if(item.name === "phone"){
+        item.value = '+';
+      } else if(item.className.indexOf('inputText') >= 0) {
+        item.value = '';
+      } else if(item.name === "age") {
+        item.value = '17-';
+      }
+    }
+
+    e.preventDefault();
+  });
 
   form.phone.pattern = '^\\+((\\d{11})|(\\d{9}))';
   form.phone.value = '+';

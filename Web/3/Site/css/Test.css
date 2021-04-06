@@ -78,6 +78,6 @@ textarea {
           inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-#ans2_radio {
+.ans2_radio {
   flex: auto;
 }
