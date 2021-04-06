@@ -4,6 +4,28 @@ import unittest
 
 
 class testPositiveD_3x3(unittest.TestCase):
+    def allElementsAreSame(self):
+        matr = [[1, 1, 1],
+                [1, 1, 1],
+                [1, 1, 1]]
+        expected = True
+
+        actual = main.PositiveD_3x3(matr)
+
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
+
+    def allElementsAreZeroes(self):
+        matr = [[0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]]
+        expected = True
+
+        actual = main.PositiveD_3x3(matr)
+
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
+
     def testPositive(self):
         matr = [[5, 2, 3],
                 [2, 6, 1],
@@ -16,8 +38,8 @@ class testPositiveD_3x3(unittest.TestCase):
                          f'Expected: {expected}\nGot: {actual}')
 
     def testNegative(self):
-        matr = [[-11, 6, -6],
-                [6, -6, 3],
+        matr = [[-11, -6, -6],
+                [-6, -6, -3],
                 [-6, 3, -6]]
         expected = False
 
