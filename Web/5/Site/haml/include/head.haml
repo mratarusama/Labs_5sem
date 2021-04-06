@@ -1,4 +1,3 @@
-- @mainJavascripts = ["main", "history"]
 - @jquery = "https://code.jquery.com/jquery-3.6.0.min.js"
 - @styles=styles
 - @javascripts=javascripts
@@ -7,10 +6,9 @@
 %link{href: "./css/style.css", rel: "stylesheet"}
 -@styles.each do |style|
   %link{href: "./css/#{style}.css", rel: "stylesheet"}
-- @mainJavascripts.each do |js|
-  %script{defer: "", src: "./js/#{js}.js"}
+%script{defer: "", src: "./js/main.js", type: "module"}
+%script{defer: "", src: "./js/history.js"}
 - @javascripts.each do |js|
   %script{defer: "", src: "./js/#{js}.js"}
 %script{src: @jquery}
-%meta{"http-equiv": "X-UA-Compatible", content: "ie=edge"}
 %title= title

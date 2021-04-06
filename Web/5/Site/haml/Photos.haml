@@ -1,0 +1,11 @@
+!!!5
+%html
+  %head
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Фотоальбом", :styles => ["Photos"], :javascripts => ['photos'])
+  %body
+    %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 4)
+    #black-block
+      %img
+      %input#back-button{type: "button", value:"Назад", style: "left:38%;bottom:10%;", onclick:"clickBack();"}
+      %input#next-button{type: "button", value:"Далее", style: "left:58%;bottom:10%;", onclick:"clickNext();"}
+      %input#hide-button{type: "button", value:"Готово", style: "left:48%;bottom:10%;", onclick:"whiteFunction();"}

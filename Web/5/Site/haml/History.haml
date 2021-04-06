@@ -1,0 +1,11 @@
+!!!5
+%html
+  %head
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "История", :styles => ["history"], :javascripts => [])
+  %body
+    %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 7)
+    #content
+      %button#change_mode_button Переключить режим просмотра
+      #history
+        #history_current
+        #history_all

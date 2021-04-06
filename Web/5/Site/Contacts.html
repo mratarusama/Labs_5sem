@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF8'>
+<link href='./css/style.css' rel='stylesheet'>
+<link href='./css/calendar.css' rel='stylesheet'>
+<link href='./css/Contacts.css' rel='stylesheet'>
+<script defer='' src='./js/main.js' type='module'></script>
+<script defer='' src='./js/history.js'></script>
+<script defer='' src='./js/calendar.js'></script>
+<script defer='' src='./js/contacts.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<title>Связь</title>
+
+</head>
+<body>
+<header><span id='name'>Игорь Маринин</span>
+<nav class='menu'>
+<div class='menu_item'>
+<a href='./index.html'>Главная</a>
+</div>
+<div class='menu_item'>
+<a href='./About.html'>Обо мне</a>
+</div>
+<div class='menu_item'>
+<a href='./Interests.html'>Мои интересы</a>
+</div>
+<div class='menu_item'>
+<a href='./Study.html'>Учёба</a>
+</div>
+<div class='menu_item'>
+<a href='./Photos.html'>Фотоальбом</a>
+</div>
+<div class='menu_item selected_item'>
+<a href='./Contacts.html'>Связь</a>
+</div>
+<div class='menu_item'>
+<a href='./Test.html'>Тест</a>
+</div>
+<div class='menu_item'>
+<a href='./History.html'>История</a>
+</div>
+<p id='timer'>19.02.1992</p>
+</nav>
+</header>
+<div id='modal'>
+<p>Вы действительно хотите отправить форму?</p>
+<input id='confirmSubmit' type='button' value='Отправить'>
+<input id='abortSubmit' type='button' value='Отмена'>
+</div>
+<div id='content'>
+<form action='mailto:marinin.i@bk.ru' enctype='text/plain' method='post'>
+<div data-tooltip='Три слова, каждое минимум в два символа'>
+Введите имя, фамилию и отчество
+<br>
+<input class='inputText' name='fio' type='text'>
+<br>
+<br>
+</div>
+<div>
+Ваш пол:
+<input checked='' id='radioMale' name='sex' type='radio' value='1'>
+<label for='radioMale'>Мужской</label>
+/
+<input checked='' id='radioFemale' name='sex' type='radio' value='0'>
+<label for='radioFemale'>Женский</label>
+</div>
+<div>
+Выберите ваш возраст:
+<select name='age'>
+<option value='17-'>17-</option>
+<option selected='' value='18'>18</option>
+<option selected='' value='19'>19</option>
+<option selected='' value='20'>20</option>
+<option selected='' value='21+'>21+</option>
+</select>
+</div>
+<br>
+<br>
+<div data-tooltip='Начинается с 7 или с 3. Максимум - 9 или 11 цифр.'>
+Введите Ваш номер телефона:
+<br>
+<input class='inputText' name='phone' type='text'>
+</div>
+<br>
+<br>
+<section>
+<label for='input-date' id='input-date'>
+Дата рождения:
+<div id='date-value'></div>
+</label>
+<div>
+<div>
+<select id='year-selection'></select>
+<select id='year-select'></select>
+<table>
+<tbody id='calendar-body'>
+<tr class='calendar-days'>
+<td class='celendar-words'>Понедельник</td>
+<td class='celendar-words'>Вторник</td>
+<td class='celendar-words'>Средка</td>
+<td class='celendar-words'>Четверг</td>
+<td class='celendar-words'>Пятница</td>
+<td class='celendar-words'>Суббота</td>
+<td class='celendar-words'>Воскресеньн</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+Введите ваш почтовый адрес:
+<br>
+<input class='inputText' name='email' required='' type='email'>
+<br>
+<br>
+<textarea class='inputText' cols='30' id='msg' name='msg' rows='10'></textarea>
+<br>
+<br>
+<div id='finalBtns'>
+<input class='button' type='submit' value='Send'>
+<input class='button' type='reset' valie='Reset'>
+</div>
+<br>
+</form>
+</div>
+</body>
+</html>

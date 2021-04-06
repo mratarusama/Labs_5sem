@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF8'>
+<link href='./css/style.css' rel='stylesheet'>
+<link href='./css/Photos.css' rel='stylesheet'>
+<script defer='' src='./js/main.js' type='module'></script>
+<script defer='' src='./js/history.js'></script>
+<script defer='' src='./js/photos.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<title>Фотоальбом</title>
+
+</head>
+<body>
+<header><span id='name'>Игорь Маринин</span>
+<nav class='menu'>
+<div class='menu_item'>
+<a href='./index.html'>Главная</a>
+</div>
+<div class='menu_item'>
+<a href='./About.html'>Обо мне</a>
+</div>
+<div class='menu_item'>
+<a href='./Interests.html'>Мои интересы</a>
+</div>
+<div class='menu_item'>
+<a href='./Study.html'>Учёба</a>
+</div>
+<div class='menu_item selected_item'>
+<a href='./Photos.html'>Фотоальбом</a>
+</div>
+<div class='menu_item'>
+<a href='./Contacts.html'>Связь</a>
+</div>
+<div class='menu_item'>
+<a href='./Test.html'>Тест</a>
+</div>
+<div class='menu_item'>
+<a href='./History.html'>История</a>
+</div>
+<p id='timer'>19.02.1992</p>
+</nav>
+</header>
+<div id='black-block'>
+<img>
+<input id='back-button' onclick='clickBack();' style='left:38%;bottom:10%;' type='button' value='Назад'>
+<input id='next-button' onclick='clickNext();' style='left:58%;bottom:10%;' type='button' value='Далее'>
+<input id='hide-button' onclick='whiteFunction();' style='left:48%;bottom:10%;' type='button' value='Готово'>
+</div>
+</body>
+</html>

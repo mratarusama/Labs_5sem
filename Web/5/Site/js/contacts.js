@@ -4,17 +4,20 @@ window.addEventListener('load', () => {
       .attr('required','')
       .attr('pattern', '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})');
 
+  let focusInvalid = (e) => {e.target.focus();};
+  let checkItem = (e) => { e.target.style.borderColor = e.target.validity.valid?'green':'red'; };
+
   for(let item of form.serializeArray()){
-    if(item.tagName === 'INPUT' && item.className !== 'button') {
-      item.addEventListener('invalid', (invalid) => {
-        invalid.target.focus();
-      });
-      item.addEventListener('focusout', (e) => {
-        e.target.style.borderColor = e.target.validity.valid ? 'green' : 'red';
-      })
+    $(item).bind('invalid', focusInvalid)
+        .bind('blur', checkItem)
+        .bind('keyup', checkItem);
+  }
+
+  form.bind('reset', (e) => {
+    for(let item of e.target.elements){
       item.style.borderColor = 'black';
     }
-  }
+  });
 
   form.find('[name=phone]')
       .attr('pattern', '^\\+((\\d{11})|(\\d{9}))')
@@ -67,11 +70,23 @@ window.addEventListener('load', () => {
 
   $('input#abortSubmit').click(function(){
     $('#modal').hide(1000);
+    $('#content').css({
+      "filter": ""
+    });
+    $('header').css({
+      "filter": ""
+    });
   });
 
   $('input#confirmSubmit').click(function(){
     form.submit();
     $('#modal').hide(1000);
+    $('#content').css({
+      "filter": ""
+    });
+    $('header').css({
+      "filter": ""
+    });
   });
 
   form[0].addEventListener('submit', function (event) {
@@ -79,6 +94,12 @@ window.addEventListener('load', () => {
 
     if ($('[name=fio]')[0].validity.valid) {
       if ($('[name=phone]')[0].validity.valid) {
+        $('#content').css({
+          "filter": "blur(5px)"
+        });
+        $('header').css({
+          "filter": "blur(5px)"
+        });
         $('#modal').show(1000);
       }
     }
