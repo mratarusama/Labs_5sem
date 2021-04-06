@@ -2,6 +2,7 @@ import os
 import main
 import unittest
 
+
 class testPositiveD_3x3(unittest.TestCase):
     def testPositive(self):
         matr = [[5, 2, 3],
@@ -11,7 +12,8 @@ class testPositiveD_3x3(unittest.TestCase):
 
         actual = main.PositiveD_3x3(matr)
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testNegative(self):
         matr = [[-11, 6, -6],
@@ -21,7 +23,9 @@ class testPositiveD_3x3(unittest.TestCase):
 
         actual = main.PositiveD_3x3(matr)
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
+
 
 class testStringReplacer(unittest.TestCase):
     def testEmptyString(self):
@@ -30,8 +34,8 @@ class testStringReplacer(unittest.TestCase):
 
         actual = main.ReplaceAllAfterDiez(s);
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
-
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testStringWithoutDiez(self):
         s = 'Hello, world!'
@@ -39,8 +43,8 @@ class testStringReplacer(unittest.TestCase):
 
         actual = main.ReplaceAllAfterDiez(s);
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
-
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testStringWithDiez(self):
         s = 'Hello,#world!'
@@ -48,8 +52,8 @@ class testStringReplacer(unittest.TestCase):
 
         actual = main.ReplaceAllAfterDiez(s);
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
-
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testStringWithManyDiez(self):
         s = 'Hel#o,#world!'
@@ -57,7 +61,9 @@ class testStringReplacer(unittest.TestCase):
 
         actual = main.ReplaceAllAfterDiez(s);
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
+
 
 class testFoundMinimalStrInFile(unittest.TestCase):
     def testEmptyFile(self):
@@ -70,7 +76,8 @@ class testFoundMinimalStrInFile(unittest.TestCase):
 
         os.remove(fName)
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testAllEquivalent(self):
         fName = 'testEqual.txt'
@@ -78,14 +85,15 @@ class testFoundMinimalStrInFile(unittest.TestCase):
                   '52132', '51231']
         with open(fName, 'w') as f:
             for s in strDat:
-                f.write(s+'\n')
+                f.write(s + '\n')
 
         expected = strDat[0]
         actual = main.FoundMinimalStrFromFile(fName)
 
         os.remove(fName);
 
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
 
     def testNormal(self):
         fName = 'testNormal.txt'
@@ -93,13 +101,15 @@ class testFoundMinimalStrInFile(unittest.TestCase):
                   '521', '5123121']
         with open(fName, 'w') as f:
             for s in strDat:
-                f.write(s+'\n')
+                f.write(s + '\n')
 
         expected = strDat[2]
         actual = main.FoundMinimalStrFromFile(fName)
 
         os.remove(fName);
-        self.assertEqual(expected, actual, f'Expected: {expected}\nGot: {actual}')
+        self.assertEqual(expected, actual,
+                         f'Expected: {expected}\nGot: {actual}')
+
 
 if __name__ == '__main__':
     unittest.main()
