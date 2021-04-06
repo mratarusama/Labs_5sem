@@ -70,11 +70,23 @@ window.addEventListener('load', () => {
 
   $('input#abortSubmit').click(function(){
     $('#modal').hide(1000);
+    $('#content').css({
+      "filter": ""
+    });
+    $('header').css({
+      "filter": ""
+    });
   });
 
   $('input#confirmSubmit').click(function(){
     form.submit();
     $('#modal').hide(1000);
+    $('#content').css({
+      "filter": ""
+    });
+    $('header').css({
+      "filter": ""
+    });
   });
 
   form[0].addEventListener('submit', function (event) {
@@ -82,6 +94,12 @@ window.addEventListener('load', () => {
 
     if ($('[name=fio]')[0].validity.valid) {
       if ($('[name=phone]')[0].validity.valid) {
+        $('#content').css({
+          "filter": "blur(5px)"
+        });
+        $('header').css({
+          "filter": "blur(5px)"
+        });
         $('#modal').show(1000);
       }
     }
