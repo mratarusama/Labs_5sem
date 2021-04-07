@@ -1,6 +1,11 @@
 #history {
   display: flex;
 }
+#history p {
+  font-size: 1.2em;
+  text-align: left;
+  text-indent: 0;
+}
 
 #history_all, #history_current {
   flex: 50%;

@@ -24,11 +24,11 @@ header
   padding-left: 10%
   padding-top: max(10%, 150px)
 
-#contentp
-  text-align: justify
-  text-indent: 1.5em
-  font-size: 1.5em
-  padding-bottom: 1em
+  & p
+    text-align: justify
+    text-indent: 1.5em
+    font-size: 1.5em
+    padding-bottom: 1em
 
 h1
   text-align: center
@@ -37,12 +37,12 @@ h1
 
 #name
   display: block
-  position:inherit
+  position: inherit
   left: 50%
   top: 10px
   transform: translateX(-50%)
   font-size: 2em
-  font-family: "Comic Sans MS"
+  font-family: "Comic Sans MS", serif
 
 a
   text-decoration: none
@@ -68,7 +68,7 @@ a
   border: 2px solid black
   border-left: none
 
-  &a
+  & > a
     display: block
     height: 100%
     width: 100%

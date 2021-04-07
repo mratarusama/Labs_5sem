@@ -96,7 +96,7 @@ let printHistoryBlock = (session, historyBlock) => {
             ul.append(
                 $('<li/>').append(
                     $('<a/>')
-                        .val(page[0])
+                        .text(page[0])
                         .attr('href', page[1])
                 )
             );
@@ -107,7 +107,7 @@ let printHistoryBlock = (session, historyBlock) => {
             ul.append(
                 $('<li/>').append(
                     $('<a/>')
-                        .val(page[0] + '(' + page[2] + ')')
+                        .text(page[0] + '(' + page[2] + ')')
                         .attr('href', page[1])
                 )
             );
@@ -118,7 +118,7 @@ let printHistoryBlock = (session, historyBlock) => {
         .append(
             $('<div/>').append(
                 $('<p/>')
-                    .val(date.toString())
+                    .text(date.toString())
             ).append(ul))
         .append($('<br/>'));
 };
@@ -139,9 +139,9 @@ let printHistory = (currentSession) => {
         // Выведем текущий сеанс
 
 
-        historyCurrentBlock.appendChild(
+        historyCurrentBlock.append(
             $('<p/>')
-                .val('Текущий сеанс:')
+                .text('Текущий сеанс:')
                 .css({
                     'font-size': '1.2em',
                     'padding-bottom': '10px'
@@ -150,9 +150,9 @@ let printHistory = (currentSession) => {
         printHistoryBlock(currentSession, historyCurrentBlock);
 
         // Выведем всю историю посещений
-        historyAllBlock.appendChild.appendChild(
+        historyAllBlock.append(
             $('<p/>')
-                .val('За всё время:')
+                .text('За всё время:')
                 .css({
                     'font-size': '1.2em',
                     'padding-bottom': '10px'
