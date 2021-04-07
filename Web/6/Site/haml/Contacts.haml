@@ -1,0 +1,75 @@
+!!!5
+%html
+  %head
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Связь", :styles => ["calendar", "Contacts"], :javascripts => ["calendar", "contacts"])
+  %body
+    %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 5)
+    #modal
+      %p Вы действительно хотите отправить форму?
+      %input#confirmSubmit{type: "button", value: "Отправить"}
+      %input#abortSubmit{type: "button", value: "Отмена"}
+    #content
+      %form{action: "mailto:marinin.i@bk.ru", method: "post", enctype: "text/plain"}
+        %div{"data-tooltip": "Три слова, каждое минимум в два символа"}
+          Введите имя, фамилию и отчество
+          %br
+          %input.inputText{type: "text", name: "fio"}
+          %br
+          %br
+
+        %div
+          Ваш пол:
+          %input#radioMale{type: "radio", name: "sex", value: "1", checked: ""}
+          %label{for: "radioMale"} Мужской
+          \/
+          %input#radioFemale{type: "radio", name: "sex", value: "0", checked: ""}
+          %label{for: "radioFemale"} Женский
+
+        %div
+          Выберите ваш возраст:
+          %select{name: "age"}
+            - values = ['17-', '18', '19', '20', '21+']
+            - values.each_with_index do |age, i|
+              - if i == 0
+                %option{value: "#{age}"} #{age}
+              - else
+                %option{value: "#{age}", selected: ""} #{age}
+        %br
+        %br
+
+        %div{"data-tooltip": "Начинается с 7 или с 3. Максимум - 9 или 11 цифр."}
+          Введите Ваш номер телефона:
+          %br
+          %input.inputText{type: "text", name: "phone"}
+        %br
+        %br
+
+        %section
+          %label#input-date{for: "input-date"}
+            Дата рождения:
+            #date-value
+          %div
+            %div
+              %select#year-selection
+              %select#year-select
+              %table
+                %tbody#calendar-body
+                  %tr.calendar-days
+                    - daysOfWeek = ['Понедельник', 'Вторник', 'Средка', 'Четверг', 'Пятница', 'Суббота', 'Воскресеньн']
+                    - daysOfWeek.each do |day|
+                      %td.celendar-words #{day}
+
+        Введите ваш почтовый адрес:
+        %br
+        %input.inputText{type: "email", name: "email", required: ""}
+        %br
+        %br
+
+        %textarea.inputText#msg{name: "msg", cols: "30", rows: "10"}
+        %br
+        %br
+
+        #finalBtns
+          %input.button{type: "submit", value: "Send"}
+          %input.button{type: "reset", valie: "Reset"}
+        %br

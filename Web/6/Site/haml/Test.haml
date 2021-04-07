@@ -1,0 +1,63 @@
+!!!5
+%html
+  %head
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Тест", :styles => ["Test"], :javascripts => ["test"])
+  %body
+    %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 6)
+    #content
+      %form{action: "mailto:marinin.i@bk.ru", method: "post", enctype:"text/plain"}
+        Введите фамилию, имя и отчество:
+        %input{type: "text", name: "fio"}
+        %br
+        %br
+
+        Выберите вашу учебную группу:
+        %select{name: "group"}
+          - groupData = [["1 курс",["ИС/б-20-1-о","ИС/б-20-2-о","ИС/б-20-3-о","ПИ/б-20-1-о"]],["2 курс",["ИС/б-19-1-о","ИС/б-19-2-о","ИС/б-19-3-о","ПИ/б-19-1-о"]],["3 курс",["ИС/б-18-1-о","ИС/б-18-2-о","ИС/б-18-3-о","ПИ/б-18-1-о"]],["4 курс",["ИС/б-17-1-о","ИС/б-17-2-о","ИС/б-17-3-о","ПИ/б-17-1-о"]],["5 курс",["ИС/м-16-1-о","ИС/м-16-2-о","ИС/м-16-3-о","ПИ/м-16-1-о"]],["6 курс",["ИС/м-15-1-о","ИС/м-15-2-о","ИС/м-15-3-о","ПИ/м-15-1-о"]]]
+          - groupData.each do |label, options|
+            %optgroup{label: "#{label}"}
+              - options.each do |option|
+                %option{value: "#{option}"} #{option}
+        %br
+        %br
+
+        %h3 Ответьте на следующие три вопроса:
+        %br
+        %br
+        %br
+
+        %h1 Вопрос 1
+        %br
+        %p Какое поле появляется вокруг любого предмета?
+        %textarea{name: "ans1", cols: "30", rows: "10"}
+        %br
+        %br
+
+        %h1 Вопрос 2
+        %br
+        %p Два ведра до краев наполнены водой. В одном из них плавает кусок дерева. Какое ведро перевесит?
+        #ans2_ans
+          .ans2_radio
+            %input#ans2_first{type: "radio", name: "ans2", value: "1", checked: ""}
+            %label{for: "ans2_first"} Перевесит ведро с деревяшкой
+          .ans2_radio
+            %input#ans2_second{type: "radio", name: "ans2", value: "2"}
+            %label{for: "ans2_second"} Перевесит ведро с водой
+          .ans2_radio
+            %input#ans2_thrid{type: "radio", name: "ans2", value: "3"}
+            %label{for: "ans2_third"} Никакое ведро не перевесит
+        %br
+        %br
+
+        %h1 Вопрос 3
+        %br
+
+        %p На каком инструменте играл Альберт Эйнштейн с юных лет?
+        %select{name: "ans3"}
+          %option{value: "1"} Гитара
+          %option{value: "2"} Пианино
+          %option{value: "3"} Скрипка
+
+        #finalBtns
+          %input.button{type: "submit", value: "Send"}
+          %input.button{type: "reset", valie: "Reset"}

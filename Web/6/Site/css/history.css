@@ -1,0 +1,19 @@
+#history {
+  display: flex;
+}
+
+#history_all, #history_current {
+  flex: 50%;
+}
+
+#change_mode_button {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #71d2ff;
+}
+#change_mode_button:active {
+  background-color: #71b4ff;
+}
+
+/*# sourceMappingURL=history.css.map */

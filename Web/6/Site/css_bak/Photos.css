@@ -1,0 +1,54 @@
+.row {
+  width: 100%;
+}
+
+figure {
+  box-sizing: border-box;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 16.6%;
+  height: 350px;
+  float: left;
+  text-align: center;
+}
+
+figure > img {
+  transition: 1s transform;
+  width: 100%;
+  max-height: 340px;
+}
+
+figure > img + figcaption {
+  transition: 1s transform;
+}
+
+figure > img:hover {
+  transform: scale(1.1);
+  transition: 2s transform;
+}
+
+figure > img:hover + figcaption {
+  transform: translateY(15px);
+  transition: 2s transform;
+}
+
+#black-block{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#black-block img{
+  display: block;
+  margin: auto;
+  padding-top: 2.5%;
+  max-height: 80%;
+}
+
+#black-block input{
+  position: absolute;
+  margin: auto;
+}

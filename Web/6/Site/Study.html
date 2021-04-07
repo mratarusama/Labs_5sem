@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF8'>
+<link href='./css/style.css' rel='stylesheet'>
+<link href='./css/Study.css' rel='stylesheet'>
+<script defer='' src='./js/main.js' type='module'></script>
+<script defer='' src='./js/history.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<title>Учёба</title>
+
+</head>
+<body>
+<header><span id='name'>Игорь Маринин</span>
+<nav class='menu'>
+<div class='menu_item'>
+<a href='./index.html'>Главная</a>
+</div>
+<div class='menu_item'>
+<a href='./About.html'>Обо мне</a>
+</div>
+<div class='menu_item'>
+<a href='./Interests.html'>Мои интересы</a>
+</div>
+<div class='menu_item selected_item'>
+<a href='./Study.html'>Учёба</a>
+</div>
+<div class='menu_item'>
+<a href='./Photos.html'>Фотоальбом</a>
+</div>
+<div class='menu_item'>
+<a href='./Contacts.html'>Связь</a>
+</div>
+<div class='menu_item'>
+<a href='./Test.html'>Тест</a>
+</div>
+<div class='menu_item'>
+<a href='./History.html'>История</a>
+</div>
+<p id='timer'>19.02.1992</p>
+</nav>
+</header>
+<div id='content'>
+<p>
+Я обучаюсь в
+<b>ФГАОУ ВО "Севастопольском Государственном Университете"</b>
+кафедра
+<b>Информационные системы</b>
+по направлению
+<b>Прикладная информатика</b>
+</p>
+<p>Вот перечень дисциплин, которые я уже успел изучить:</p>
+<!-- Ух таблицы, блин -->
+<table>
+<tr>
+<td class='' colspan='1' rowspan='3'>№</td>
+<td class='bold' colspan='1' rowspan='3'>Дисциплина</td>
+<td class='bold' colspan='12' rowspan='1'>Часов в неделю (Лекций, Лаб.раб, Практ. раб)</td>
+</tr>
+<tr>
+<td class='bold' colspan='6' rowspan='1'>1 курс</td>
+<td class='bold' colspan='6' rowspan='1'>2 курс</td>
+</tr>
+<tr>
+<td class='bold' colspan='3' rowspan='1'>1 сем</td>
+<td class='bold' colspan='3' rowspan='1'>2 сем</td>
+<td class='bold' colspan='3' rowspan='1'>3 сем</td>
+<td class='bold' colspan='3' rowspan='1'>4 сем</td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>1</td>
+<td class='italic' colspan='1' rowspan='1'>Экология</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>2</td>
+<td class='italic' colspan='1' rowspan='1'>Высшая математика</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>3</td>
+<td class='italic' colspan='1' rowspan='1'>Русский язык и культура речи</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>4</td>
+<td class='italic' colspan='1' rowspan='1'>Основы дискретной математики</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>5</td>
+<td class='italic' colspan='1' rowspan='1'>Основы программирования и алгоритмические языки</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>6</td>
+<td class='italic' colspan='1' rowspan='1'>Основы экологии</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>7</td>
+<td class='italic' colspan='1' rowspan='1'>Теория вероятностей и математическая статистика</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>3</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>8</td>
+<td class='italic' colspan='1' rowspan='1'>Физика</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>9</td>
+<td class='italic' colspan='1' rowspan='1'>Основы электротехники и электроники</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>10</td>
+<td class='italic' colspan='1' rowspan='1'>Численные методы в информатике</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+</tr>
+<tr>
+<td class='' colspan='1' rowspan='1'>11</td>
+<td class='italic' colspan='1' rowspan='1'>Методы исследования операций</td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='' colspan='1' rowspan='1'></td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>0</td>
+<td class='bold' colspan='1' rowspan='1'>2</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+<td class='bold' colspan='1' rowspan='1'>1</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

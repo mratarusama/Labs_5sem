@@ -1,0 +1,7 @@
+!!!5
+%html
+  %head
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Мои интересы", :styles => [], :javascripts => ['interests'])
+  %body
+    %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 2)
+    #content
