@@ -1,7 +1,7 @@
 !!!5
 %html
   %head
-    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Фотоальбом", :styles => ["Photos"], :javascripts => ['photos'])
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Фотоальбом", :styles => ["Photos"], :javascripts => [])
   %body
     %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 4)
     #black-block
@@ -9,3 +9,19 @@
       %input#back-button{type: "button", value:"Назад", style: "left:38%;bottom:10%;", onclick:"clickBack();"}
       %input#next-button{type: "button", value:"Далее", style: "left:58%;bottom:10%;", onclick:"clickNext();"}
       %input#hide-button{type: "button", value:"Готово", style: "left:48%;bottom:10%;", onclick:"whiteFunction();"}
+
+    #content
+      - length = 6
+      - row = 0
+      - [1, 2].each do |i|
+        .row
+          - [1,2,3,4,5,6].each do |j|
+            %figure
+              %img{src: "./img/cat#{6*row+j}.png"}
+              %figcaption.picDesc Картинка #{6*row+j}
+        - row += 1
+      .row
+        - [13, 14, 15].each do |i|
+          %figure
+            %img{src: "./img/cat#{i}.png"}
+            %figcaption.picDesc Картинка #{i}
