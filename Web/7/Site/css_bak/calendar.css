@@ -1,0 +1,28 @@
+.contacttextblock{
+    font-size: 1.3em;
+    padding: 16% 20% 0px 20%;
+    text-align: center;
+    line-height: 1.5;
+    color: #333333;
+
+}
+
+.testtextblock{
+    font-size: 1.3em;
+    padding: 8% 20% 0px 20%;
+    text-align: center;
+    line-height: 1.5;
+    color: #333333;
+
+}
+
+.celendar-days{
+    font-size: 1vw;
+}
+#calendar-body{
+    text-align: center !important;
+}
+
+.celendar-words{
+    padding-right: 1vw;
+}

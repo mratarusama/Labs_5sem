@@ -1,7 +1,7 @@
 !!!5
 %html
   %head
-    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Фотоальбом", :styles => ["Photos"], :javascripts => ["photos"])
+    =Haml::Engine.new(File.read('./include/head.haml')).render(self, :title => "Фотоальбом", :styles => ["Photos"], :javascripts => [])
   %body
     %header=Haml::Engine.new(File.read('./include/header.haml')).render(self, :selected => 4)
     #black-block

@@ -1,0 +1,12 @@
+- @selected=selected
+- @pages = {"index" => "Главная", "About" => "Обо мне", "Interests" => "Мои интересы", "Study" => "Учёба", "Photos" => "Фотоальбом", "Contacts" => "Связь", "Test" => "Тест", "History" => "История"}
+%span#name Игорь Маринин
+%nav.menu
+  -@pages.each_with_index do |page, i|
+    -if i == @selected
+      .menu_item.selected_item
+        %a{href: "./#{page[0]}.html"} #{page[1]}
+    -else
+      .menu_item
+        %a{href: "./#{page[0]}.html"} #{page[1]}
+  %p#timer 19.02.1992

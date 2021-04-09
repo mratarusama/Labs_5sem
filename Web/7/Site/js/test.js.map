@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "test.js",
+  "sourceRoot": "..\\coffescript",
+  "sources": [
+    "test.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,gBAAP,CAAwB,MAAxB,EAAgC,QAAA,CAAA,CAAA;AAChC,QAAA,SAAA,EAAA,YAAA,EAAA,IAAA,EAAA;IAAE,IAAA,GAAO,CAAA,CAAE,MAAF;IACP,IAAI,CAAC,IAAL,CAAU,aAAV,CAAwB,CAAC,IAAzB,CAA8B,UAA9B,EAA0C,MAA1C,CAAiD,CAAC,IAAlD,CAAuD,SAAvD,EAAkE,4DAAlE;IAEA,YAAA,GAAe,QAAA,CAAC,CAAD,CAAA;MACb,CAAC,CAAC,MAAM,CAAC,KAAT,CAAA;IADa;IAIf,SAAA,GAAY,QAAA,CAAC,CAAD,CAAA;MACV,CAAC,CAAC,MAAM,CAAC,KAAK,CAAC,WAAf,GAAgC,CAAC,CAAC,MAAM,CAAC,QAAQ,CAAC,KAArB,GAAgC,OAAhC,GAA6C;IADhE;IAIZ,KAAA,6BAAA;MACE,CAAA,CAAE,IAAF,CAAO,CAAC,IAAR,CAAa,SAAb,EAAwB,YAAxB,CAAqC,CAAC,IAAtC,CAA2C,MAA3C,EAAmD,SAAnD,CAA6D,CAAC,IAA9D,CAAmE,OAAnE,EAA4E,SAA5E;IADF;IAEA,IAAI,CAAC,IAAL,CAAU,OAAV,EAAmB,QAAA,CAAC,CAAD,CAAA;MACjB;MACA,KAAA,6BAAA;QACE,IAAI,CAAC,KAAK,CAAC,WAAX,GAAyB;MAD3B;IAFiB,CAAnB;EAd8B,CAAhC;AAAA",
+  "sourcesContent": [
+    "window.addEventListener 'load', ->\r\n  form = $('form')\r\n  form.find('[name=ans1]').attr('required', 'true').attr 'pattern', '([а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,} [а-яА-яa-zA-Z]{2,})'\r\n\r\n  focusInvalid = (e) ->\r\n    e.target.focus()\r\n    return\r\n\r\n  checkItem = (e) ->\r\n    e.target.style.borderColor = if e.target.validity.valid then 'green' else 'red'\r\n    return\r\n\r\n  for item of form.serializeArray()\r\n    $(item).bind('invalid', focusInvalid).bind('blur', checkItem).bind 'keyup', checkItem\r\n  form.bind 'reset', (e) ->\r\n    `var item`\r\n    for item of form.serializeArray()\r\n      item.style.borderColor = 'black'\r\n    return\r\n  return"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "main.js",
+  "sourceRoot": "..\\coffescript",
+  "sources": [
+    "main.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,OAAA;EAAQ,kBAAR;EAA4B,iBAA5B;CAAA,MAAA;;AACA,OAAA;EAAQ,gBAAR;EAA0B,eAA1B;CAAA,MAAA;;AAEA,kBAAA,CAAA;;AACA,iBAAA,CAAA;;AACA,gBAAA,CAAA",
+  "sourcesContent": [
+    "import {markButtonsOnHover, bindInterestsMenu} from './menu.js'\r\nimport {startTimeCounter, stopTimeCounter} from './timeManager.js'\r\n\r\nmarkButtonsOnHover()\r\nbindInterestsMenu()\r\nstartTimeCounter()"
+  ]
+}

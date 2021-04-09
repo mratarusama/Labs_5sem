@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "timeManager.js",
+  "sourceRoot": "..\\coffescript",
+  "sources": [
+    "timeManager.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA,QAAA,EAAA,KAAA,EAAA,SAAA,EAAA,UAAA,EAAA;;AAAA,KAAA,GAAQ;;AACR,SAAA,GAAY,CAAA,CAAE,QAAF;;AACZ,UAAA,GAAa,CACX,aADW,EAEX,aAFW,EAGX,SAHW,EAIX,OAJW,EAKX,SALW,EAMX,SANW,EAOX,SAPW;;AAUb,UAAA,GAAa,QAAA,CAAC,CAAD,CAAA;EACX,IAAG,CAAA,GAAI,EAAP;WAAe,GAAA,GAAM,EAArB;GAAA,MAAA;WAA4B,EAA5B;;AADW;;AAGb,QAAA,GAAW,QAAA,CAAA,CAAA;AACX,MAAA;EAAE,IAAA,GAAO,IAAI,IAAJ,CAAA;EACP,SAAS,CAAC,IAAV,CAAe,UAAA,CAAW,IAAI,CAAC,QAAL,CAAA,CAAX,CAAA,GAA8B,GAA9B,GAAoC,UAAA,CAAW,IAAI,CAAC,UAAL,CAAA,CAAX,CAApC,GAAoE,GAApE,GAA0E,UAAA,CAAW,IAAI,CAAC,UAAL,CAAA,CAAX,CAA1E,GAA0G,KAA1G,GAAkH,UAAA,CAAW,IAAI,CAAC,MAAL,CAAA,CAAX,CAAlH,GAA8I,GAA9I,GAAoJ,UAAA,CAAW,IAAI,CAAC,QAAL,CAAA,CAAX,CAApJ,GAAkL,GAAlL,GAAwL,IAAI,CAAC,WAAL,CAAA,CAAxL,GAA6M,GAA7M,GAAmN,UAAU,CAAC,IAAI,CAAC,MAAL,CAAA,CAAD,CAA5O;AAFS;;AAKX,OAAA,IAAO,gBAAA,GAAmB,QAAA,CAAA,CAAA;EACxB,IAAG,CAAC,KAAJ;IACE,QAAA,CAAA;IACA,KAAA,GAAQ,WAAA,CAAY,QAAZ,EAAsB,IAAtB,EAFV;;AADwB;;AAM1B,OAAA,IAAO,eAAA,GAAkB,QAAA,CAAA,CAAA;EACvB,IAAG,KAAH;IACE,aAAA,CAAc,KAAd;IACA,KAAA,GAAQ,KAFV;;AADuB",
+  "sourcesContent": [
+    "timer = null\r\ntimerText = $('#timer')\r\nweekDaysRU = [\r\n  'Воскресенье'\r\n  'Понедельник'\r\n  'Вторник'\r\n  'Среда'\r\n  'Четверг'\r\n  'Пятница'\r\n  'Суббота'\r\n]\r\n\r\nzeroFormat = (i) ->\r\n  if i < 10 then '0' + i else i\r\n\r\nshowTime = ->\r\n  time = new Date\r\n  timerText.text zeroFormat(time.getHours()) + ':' + zeroFormat(time.getMinutes()) + ':' + zeroFormat(time.getSeconds()) + ' | ' + zeroFormat(time.getDay()) + '-' + zeroFormat(time.getMonth()) + '-' + time.getFullYear() + ' ' + weekDaysRU[time.getDay()]\r\n  return\r\n\r\nexport startTimeCounter = ->\r\n  if !timer\r\n    showTime()\r\n    timer = setInterval(showTime, 1000)\r\n  return\r\n\r\nexport stopTimeCounter = ->\r\n  if timer\r\n    clearInterval timer\r\n    timer = null\r\n  return"
+  ]
+}

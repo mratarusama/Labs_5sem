@@ -38,39 +38,6 @@ const titles = [
   'Картинка 15'
 ];
 
-let insert_photos = (photo, title, count_in_row) => {
-  let photo_count = photo.length;
-  let title_count = title.length;
-  if(photo_count !== title_count){
-    throw 'Different number of objects in arrays';
-  }
-
-  let content = $('<div/>')
-      .attr('id', 'content');
-  let row = '';
-  for(let i = 0; i < photo_count; i++) {
-    if(i % count_in_row === 0){
-      if(row.length)
-      content.append(row);
-      row = $('<div/>')
-          .addClass('row');
-    }
-    console.log(row);
-    row.append(
-        $('<figure/>')
-            .append($('<img/>', {src:photo[i], alt: title[i], title: title[i]}))
-            .append(
-                $('<figcaption/>')
-                    .text(title[i])
-                    .addClass('picDesc')
-            )
-    );
-  }
-  content.append(row);
-  $('body').append(content);
-};
-
-insert_photos(fotos, titles, 6);
 $('img').each((i, e)=>{
   $(e).attr('onclick', `imgClick(${i})`)
 });
