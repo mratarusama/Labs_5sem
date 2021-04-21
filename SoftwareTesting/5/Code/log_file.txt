@@ -1,0 +1,158 @@
+FFFFFFFFFFFFFFFFF
+======================================================================
+FAIL: testAllEmpty (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 228, in testAllEmpty
+    self.assertEqual(expected, actual,
+AssertionError: '' != None : Expected: 
+Got: None
+
+======================================================================
+FAIL: testAllEquivalent (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 168, in testAllEquivalent
+    self.assertEqual(expected, actual,
+AssertionError: '12345' != None : Expected: 12345
+Got: None
+
+======================================================================
+FAIL: testEmptyFile (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 152, in testEmptyFile
+    self.assertEqual(expected, actual,
+AssertionError: '' != None : Expected: 
+Got: None
+
+======================================================================
+FAIL: testFirstMin (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 183, in testFirstMin
+    self.assertEqual(expected, actual,
+AssertionError: '521' != None : Expected: 521
+Got: None
+
+======================================================================
+FAIL: testLastMin (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 198, in testLastMin
+    self.assertEqual(expected, actual,
+AssertionError: '521' != None : Expected: 521
+Got: None
+
+======================================================================
+FAIL: testNormal (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 213, in testNormal
+    self.assertEqual(expected, actual,
+AssertionError: '521' != None : Expected: 521
+Got: None
+
+======================================================================
+FAIL: testOneString (__main__.testFoundMinimalStrInFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 139, in testOneString
+    self.assertEqual(expected, actual,
+AssertionError: '12345' != None : Expected: 12345
+Got: None
+
+======================================================================
+FAIL: testNegative (__main__.testPositiveD_3x3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 48, in testNegative
+    self.assertEqual(expected, actual,
+AssertionError: False != None : Expected: False
+Got: None
+
+======================================================================
+FAIL: testPositive (__main__.testPositiveD_3x3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 37, in testPositive
+    self.assertEqual(expected, actual,
+AssertionError: True != None : Expected: True
+Got: None
+
+======================================================================
+FAIL: testAllDiezString (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 77, in testAllDiezString
+    self.assertEqual(expected, actual,
+AssertionError: '#@@@@@@@@@' != None : Expected: #@@@@@@@@@
+Got: None
+
+======================================================================
+FAIL: testEmptyString (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 68, in testEmptyString
+    self.assertEqual(expected, actual,
+AssertionError: '' != None : Expected: 
+Got: None
+
+======================================================================
+FAIL: testOneSymbolString (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 59, in testOneSymbolString
+    self.assertEqual(expected, actual,
+AssertionError: 'A' != None : Expected: A
+Got: None
+
+======================================================================
+FAIL: testStringFirstDiez (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 113, in testStringFirstDiez
+    self.assertEqual(expected, actual,
+AssertionError: '#@@@@@@@@@@@@' != None : Expected: #@@@@@@@@@@@@
+Got: None
+
+======================================================================
+FAIL: testStringLastDiez (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 122, in testStringLastDiez
+    self.assertEqual(expected, actual,
+AssertionError: 'Hello, world#' != None : Expected: Hello, world#
+Got: None
+
+======================================================================
+FAIL: testStringWithDiez (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 95, in testStringWithDiez
+    self.assertEqual(expected, actual,
+AssertionError: 'Hello,#@@@@@@' != None : Expected: Hello,#@@@@@@
+Got: None
+
+======================================================================
+FAIL: testStringWithManyDiez (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 104, in testStringWithManyDiez
+    self.assertEqual(expected, actual,
+AssertionError: 'Hel#@@@@@@@@@' != None : Expected: Hel#@@@@@@@@@
+Got: None
+
+======================================================================
+FAIL: testStringWithoutDiez (__main__.testStringReplacer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\GitHub\Labs_5sem\SoftwareTesting\5\Code\tests.py", line 86, in testStringWithoutDiez
+    self.assertEqual(expected, actual,
+AssertionError: 'Hello, world!' != None : Expected: Hello, world!
+Got: None
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.003s
+
+FAILED (failures=17)
